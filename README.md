@@ -1,7 +1,7 @@
 # Convert DVD Video to MP4 and Create XML Metadata File
 
 # Purpose:
-Convert DVD video to MP4 (using ffmpeg) and create an XML file containing technical metadata about the MP4 file (using MediaInfo).
+Convert DVD video to MPEG-4 (using ffmpeg) and create an XML file containing technical metadata about the MP4 file (using MediaInfo).
 
 # Dependencies:
 
