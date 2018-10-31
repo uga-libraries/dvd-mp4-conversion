@@ -35,7 +35,7 @@ Run the script with the command dvd-mp4-conversion.sh target-directory media-ide
 
 Verify the quality of the audio and video in the output file against that of the DVD.
 
-Verify that XML metadata file are complete.
+Verify that XML metadata file is complete.
 
 # Initial Author
 
