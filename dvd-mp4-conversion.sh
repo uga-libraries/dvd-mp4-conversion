@@ -1,5 +1,5 @@
 #!/bin/bash
-# dvd-mp4-conversion.sh (Version 1.0)
+# dvd-mp4-conversion.sh (Version 1.1)
 
 # Purpose:
   # Reads VOB files on DVD, concatenates VOB files into a single file, and converts that file to an MP4 access file using ffmpeg.
@@ -39,10 +39,11 @@ mv "$1/concatenated.VOB" "$1/output-files"
 cd "$1/output-files"
 
 # Use ffmpeg to convert the concatenated VOB file to an MP4 file, assign name to MP4 file using the media identifer provided as the second argument, and delete concatenated VOB file.
+  # ffmpeg settings: using libx264 (MPEG4-AVC) as video codec rather retaining MPEG-4 Part2 codec from DVD video because it is more efficient and results in a smaller output file with the same quality.
 echo "Generating MP4 access file"
 echo ""
   for d in *; do
-    ffmpeg -loglevel panic -i "$d" -codec:a copy -codec:v copy "$2".mp4
+    ffmpeg -loglevel panic -i "$d" -codec:a copy -codec:v libx264 "$2".mp4
   done
 rm concatenated.VOB
 
